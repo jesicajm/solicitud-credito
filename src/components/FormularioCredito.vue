@@ -42,7 +42,10 @@
               riesgo.
             </p>
             <p>b. Ingresos iguales o superiores a 2.400.000</p>
-            <button type="button" class="boton" @click="ocultarRequisitos">
+            <button 
+                type="button" 
+                class="boton"
+                @click="ocultarRequisitos">
               Continuar
             </button>
           </div>
@@ -1000,6 +1003,7 @@ export default {
     },
     ocultarRequisitos() {
       this.mostrarRequisitos = false;
+      
     },
     ocultarBoton() {
       this.mostrarBoton = false;
@@ -1012,6 +1016,10 @@ export default {
       // Lógica para la acción del botón "Próximo"
       if (this.section === 1) {
         this.guardarRegistro();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+        event: "registro_enviado"
+      });
       }
 
       this.section += 1;
