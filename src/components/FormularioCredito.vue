@@ -41,7 +41,7 @@
               a. <span>NO</span> puedes tener reportes negativos en centrales de
               riesgo.
             </p>
-            <p>b. Ingresos iguales o superiores a 2.400.000</p>
+            <p>b. Ingresos iguales o superiores a <span>3.500.000</span></p>
             <button 
                 type="button" 
                 class="boton"
@@ -55,6 +55,17 @@
           >
             <h2>Información de contacto</h2>
             <div>
+              <div>
+                <label>Tipo de crédito:</label>
+                <select
+                  v-model="tipoCredito"
+                  class="form-select"
+                  aria-label="Default select example"
+                >
+                  <option value="cartera">Compra de Cartera</option>
+                  <option value="compraVehiculo">Compra de vehículo</option>
+                </select>
+              </div>
               <div>
                 <label for="nombre">Nombre:</label>
                 <input
@@ -174,7 +185,7 @@
                   class="form-control"
                 />
               </div>
-              <div>
+              <div v-if="tipoCredito=='compraVehiculo'">
                 <label for="cuotaInicial">Cuota inicial:</label>
                 <input
                   :value="respuestas.cuotaInicial"
@@ -790,6 +801,7 @@ const firebaseConfig = {
 export default {
   data() {
     return {
+      tipoCredito: "cartera",
       submit:false,
       loading: false,
       submitComplete: false,
