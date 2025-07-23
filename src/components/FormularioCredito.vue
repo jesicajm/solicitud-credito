@@ -42,10 +42,7 @@
               riesgo.
             </p>
             <p>b. Ingresos iguales o superiores a <span>3.500.000</span></p>
-            <button 
-                type="button" 
-                class="boton"
-                @click="ocultarRequisitos">
+            <button type="button" class="boton" @click="ocultarRequisitos">
               Continuar
             </button>
           </div>
@@ -185,7 +182,7 @@
                   class="form-control"
                 />
               </div>
-              <div v-if="tipoCredito=='compraVehiculo'">
+              <div v-if="tipoCredito == 'compraVehiculo'">
                 <label for="cuotaInicial">Cuota inicial:</label>
                 <input
                   :value="respuestas.cuotaInicial"
@@ -447,7 +444,6 @@
                   class="form-control"
                 />
               </div>
-
             </div>
           </div>
 
@@ -508,7 +504,6 @@
                 <h3>Egresos mensuales:</h3>
                 <div>
                   <div class="grupo-OtrosGastos">
-                    
                     <div class="grupo-OtrosGastos_familiares">
                       <label for="gastosFamiliares">Gastos familiares:</label>
                       <input
@@ -532,221 +527,232 @@
           <!-- Sección de Referencias -->
           <div v-if="section == 6">
             <div v-if="!submit">
-            <h2>Referencias</h2>
-            <div>
+              <h2>Referencias</h2>
               <div>
-                <h3>Referencias familiares:</h3>
-                <div class="section-form__referencias">
-                  <div class="section-form__referencia">
-                    <div>
-                      <label for="nomvbre">Nombre</label>
-                      <input
-                        v-model="respuestas.referenciaFamiliar1.nombre"
-                        type="text"
-                        class="form-control"
-                      />
+                <div>
+                  <h3>Referencias familiares:</h3>
+                  <div class="section-form__referencias">
+                    <div class="section-form__referencia">
+                      <div>
+                        <label for="nomvbre">Nombre</label>
+                        <input
+                          v-model="respuestas.referenciaFamiliar1.nombre"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="telefono">Celular:</label>
+                        <input
+                          v-model="respuestas.referenciaFamiliar1.celular"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="ciudad">Ciudad:</label>
+                        <input
+                          v-model="respuestas.referenciaFamiliar1.ciudad"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <label for="telefono">Celular:</label>
-                      <input
-                        v-model="respuestas.referenciaFamiliar1.celular"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="ciudad">Ciudad:</label>
-                      <input
-                        v-model="respuestas.referenciaFamiliar1.ciudad"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                  </div>
-                  <div class="section-form__referencia">
-                    <div>
-                      <label for="nomvbre">Nombre</label>
-                      <input
-                        v-model="respuestas.referenciaFamiliar2.nombre"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="telefono">Celular:</label>
-                      <input
-                        v-model="respuestas.referenciaFamiliar2.celular"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="ciudad">Ciudad:</label>
-                      <input
-                        v-model="respuestas.referenciaFamiliar2.ciudad"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="section-form__referencias">
-                  <h3>Referencias personales:</h3>
-                  <div class="section-form__referencia">
-                    <div>
-                      <label for="nomvbre">Nombre</label>
-                      <input
-                        v-model="respuestas.referenciaPersonal1.nombre"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="telefono">Celular:</label>
-                      <input
-                        v-model="respuestas.referenciaPersonal1.celular"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="ciudad">Ciudad:</label>
-                      <input
-                        v-model="respuestas.referenciaPersonal1.ciudad"
-                        type="text"
-                        class="form-control"
-                      />
+                    <div class="section-form__referencia">
+                      <div>
+                        <label for="nomvbre">Nombre</label>
+                        <input
+                          v-model="respuestas.referenciaFamiliar2.nombre"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="telefono">Celular:</label>
+                        <input
+                          v-model="respuestas.referenciaFamiliar2.celular"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="ciudad">Ciudad:</label>
+                        <input
+                          v-model="respuestas.referenciaFamiliar2.ciudad"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div class="section-form__referencia">
-                    <div>
-                      <label for="nomvbre">Nombre</label>
-                      <input
-                        v-model="respuestas.referenciaPersonal2.nombre"
-                        type="text"
-                        class="form-control"
-                      />
+                  <div class="section-form__referencias">
+                    <h3>Referencias personales:</h3>
+                    <div class="section-form__referencia">
+                      <div>
+                        <label for="nomvbre">Nombre</label>
+                        <input
+                          v-model="respuestas.referenciaPersonal1.nombre"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="telefono">Celular:</label>
+                        <input
+                          v-model="respuestas.referenciaPersonal1.celular"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="ciudad">Ciudad:</label>
+                        <input
+                          v-model="respuestas.referenciaPersonal1.ciudad"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <label for="telefono">Celular:</label>
-                      <input
-                        v-model="respuestas.referenciaPersonal2.celular"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="ciudad">Ciudad:</label>
-                      <input
-                        v-model="respuestas.referenciaPersonal2.ciudad"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  v-if="
-                    descripcionActividad === 'independiente' ||
-                    descripcionActividad === 'prestadorServicios'
-                  "
-                  class="section-form__referencias"
-                >
-                  <h3>Referencias comerciales:</h3>
-                  <div class="section-form__referencia">
-                    <div>
-                      <label for="nomvbre">Nombre</label>
-                      <input
-                        v-model="respuestas.referenciaComercial1.nombre"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="telefono">Celular:</label>
-                      <input
-                        v-model="respuestas.referenciaComercial1.celular"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="ciudad">Ciudad:</label>
-                      <input
-                        v-model="respuestas.referenciaComercial1.ciudad"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="cedula">Cédula o Nit:</label>
-                      <input
-                        v-model="respuestas.referenciaComercial1.cedula"
-                        type="text"
-                        class="form-control"
-                      />
+                    <div class="section-form__referencia">
+                      <div>
+                        <label for="nomvbre">Nombre</label>
+                        <input
+                          v-model="respuestas.referenciaPersonal2.nombre"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="telefono">Celular:</label>
+                        <input
+                          v-model="respuestas.referenciaPersonal2.celular"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="ciudad">Ciudad:</label>
+                        <input
+                          v-model="respuestas.referenciaPersonal2.ciudad"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div class="section-form__referencia">
-                    <div>
-                      <label for="nomvbre">Nombre</label>
-                      <input
-                        v-model="respuestas.referenciaComercial2.nombre"
-                        type="text"
-                        class="form-control"
-                      />
+                  <div
+                    v-if="
+                      descripcionActividad === 'independiente' ||
+                      descripcionActividad === 'prestadorServicios'
+                    "
+                    class="section-form__referencias"
+                  >
+                    <h3>Referencias comerciales:</h3>
+                    <div class="section-form__referencia">
+                      <div>
+                        <label for="nomvbre">Nombre</label>
+                        <input
+                          v-model="respuestas.referenciaComercial1.nombre"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="telefono">Celular:</label>
+                        <input
+                          v-model="respuestas.referenciaComercial1.celular"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="ciudad">Ciudad:</label>
+                        <input
+                          v-model="respuestas.referenciaComercial1.ciudad"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="cedula">Cédula o Nit:</label>
+                        <input
+                          v-model="respuestas.referenciaComercial1.cedula"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <label for="telefono">Celular:</label>
-                      <input
-                        v-model="respuestas.referenciaComercial2.celular"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="ciudad">Ciudad:</label>
-                      <input
-                        v-model="respuestas.referenciaComercial2.ciudad"
-                        type="text"
-                        class="form-control"
-                      />
-                    </div>
-                    <div>
-                      <label for="cedula">Cédula o Nit:</label>
-                      <input
-                        v-model="respuestas.referenciaComercial2.cedula"
-                        type="text"
-                        class="form-control"
-                      />
+                    <div class="section-form__referencia">
+                      <div>
+                        <label for="nomvbre">Nombre</label>
+                        <input
+                          v-model="respuestas.referenciaComercial2.nombre"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="telefono">Celular:</label>
+                        <input
+                          v-model="respuestas.referenciaComercial2.celular"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="ciudad">Ciudad:</label>
+                        <input
+                          v-model="respuestas.referenciaComercial2.ciudad"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                      <div>
+                        <label for="cedula">Cédula o Nit:</label>
+                        <input
+                          v-model="respuestas.referenciaComercial2.cedula"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <label style="margin-right: 8px;">Firma: </label>
-              <canvas
-                ref="canvas"
-                :width="canvasWidth"
-                :height="canvasHeight"
-                style="border: 1px solid #ced4da;"
-              ></canvas>
               <div>
-              <button
-                type="button"
-                class="boton"
-                @click.prevent.stop="limpiarFirma"
-              >
-                Limpiar Firma
-              </button>
+                <label style="margin-right: 8px">Firma: </label>
+                <canvas
+                  ref="canvas"
+                  :width="canvasWidth"
+                  :height="canvasHeight"
+                  style="border: 1px solid #ced4da"
+                ></canvas>
+                <div>
+                  <button
+                    type="button"
+                    class="boton"
+                    @click.prevent.stop="limpiarFirma"
+                  >
+                    Limpiar Firma
+                  </button>
+                </div>
               </div>
-            </div>
             </div>
             <div class="contactar" v-if="submitComplete">
               <p>Estás a un paso de cumplir con tu proyecto de vehículo</p>
-              <p>Para iniciar el proceso de crédito envia una foto de tu cédula {{ descripcionActividad === 'independiente' ? 'y RUT a tu asesor por WhatsApp' : 'a tu asesor por WhatsApp' }} </p>
-              <div><button @click="contactarAsesor" class="boton" type="button">Contactar asesor</button></div>
+              <p>
+                Para iniciar el proceso de crédito envia una foto de tu cédula
+                {{
+                  descripcionActividad === "independiente"
+                    ? "y RUT a tu asesor por WhatsApp"
+                    : "a tu asesor por WhatsApp"
+                }}
+              </p>
+              <div>
+                <button @click="contactarAsesor" class="boton" type="button">
+                  Contactar asesor
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -763,14 +769,28 @@
           <button
             type="button"
             @click="proximo"
-            :class="disabledButton ? 'boton-desabilitado' : !disabledButton && section === 1 ? 'boton envio-registro' : 'boton'" :disabled="disabledButton"
+            :class="
+              disabledButton
+                ? 'boton-desabilitado'
+                : !disabledButton && section === 1
+                ? 'boton envio-registro'
+                : 'boton'
+            "
+            :disabled="disabledButton"
             v-if="section !== 6 && mostrarRequisitos === false"
           >
             Próximo
           </button>
         </div>
         <div v-if="!submit" class="boton-enviar">
-          <button :class="disabledButton ? 'submit-desabilitado' : 'submit'" :disabled="disabledButton" v-if="section == 6" type="submit">Enviar</button>
+          <button
+            :class="disabledButton ? 'submit-desabilitado' : 'submit'"
+            :disabled="disabledButton"
+            v-if="section == 6"
+            type="submit"
+          >
+            Enviar
+          </button>
         </div>
       </form>
     </div>
@@ -798,11 +818,27 @@ const firebaseConfig = {
   measurementId: "G-56F8P4D7QM",
 };
 
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+function getFbcFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const fbclid = urlParams.get("fbclid");
+  if (fbclid) {
+    const timestamp = Date.now();
+    return `fb.1.${Math.floor(timestamp / 1000)}.${fbclid}`;
+  }
+  return null;
+}
+
 export default {
   data() {
     return {
       tipoCredito: "cartera",
-      submit:false,
+      submit: false,
       loading: false,
       submitComplete: false,
       mostrarRequisitos: true,
@@ -895,7 +931,7 @@ export default {
         });
       }
       window.scrollTo(0, 0);
-    }    
+    },
   },
   computed: {
     disabledButton() {
@@ -950,16 +986,16 @@ export default {
         return true;
       }
     },
-    widthAnterior(){
-      if(this.section === 6){
-         return { widthBoton:true};
-      }else{
-        return { boton:true};
+    widthAnterior() {
+      if (this.section === 6) {
+        return { widthBoton: true };
+      } else {
+        return { boton: true };
       }
-    }
+    },
   },
   methods: {
-     inicializarCanvas() {
+    inicializarCanvas() {
       const canvas = this.$refs.canvas;
       const ctx = canvas.getContext("2d");
       ctx.fillStyle = "white";
@@ -991,8 +1027,12 @@ export default {
       };
 
       // Eventos para el mouse
-      canvas.addEventListener("mousedown", (e) => iniciarDibujo(e.offsetX, e.offsetY));
-      canvas.addEventListener("mousemove", (e) => dibujar(e.offsetX, e.offsetY));
+      canvas.addEventListener("mousedown", (e) =>
+        iniciarDibujo(e.offsetX, e.offsetY)
+      );
+      canvas.addEventListener("mousemove", (e) =>
+        dibujar(e.offsetX, e.offsetY)
+      );
       canvas.addEventListener("mouseup", finalizarDibujo);
       canvas.addEventListener("mouseout", finalizarDibujo);
 
@@ -1015,7 +1055,6 @@ export default {
     },
     ocultarRequisitos() {
       this.mostrarRequisitos = false;
-      
     },
     ocultarBoton() {
       this.mostrarBoton = false;
@@ -1030,8 +1069,8 @@ export default {
         this.guardarRegistro();
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-        event: "registro_enviado"
-      });
+          event: "registro_enviado",
+        });
       }
 
       this.section += 1;
@@ -1093,9 +1132,7 @@ export default {
             ? "untitled88"
             : "untitled87"
         }`,
-        `${
-          this.respuestas.sexo === "femenino" ? "untitled92" : "untitled93"
-        }`,
+        `${this.respuestas.sexo === "femenino" ? "untitled92" : "untitled93"}`,
         `${
           this.respuestas.estudios === "primaria"
             ? "untitled94"
@@ -1115,7 +1152,7 @@ export default {
             ? "untitled102"
             : "untitled103"
         }`,
-       `${
+        `${
           this.respuestas.tipoVivienda === "conHipoteca"
             ? "untitled104"
             : this.respuestas.tipoVivienda === "sinHipoteca"
@@ -1143,7 +1180,7 @@ export default {
         "Direcciòn Principal",
         "Telefono",
         "Ciudad",
-         `${
+        `${
           this.respuestas.actividadEconomica === "comerciante"
             ? "untitled112"
             : this.respuestas.actividadEconomica === "empresario"
@@ -1178,7 +1215,7 @@ export default {
         "Nombre 6",
         "Telefono 6",
         "Ciudad 6",
-        "Cedula o Nit 2"
+        "Cedula o Nit 2",
       ]; // Identificadores únicos de los campos del PDF
       const fieldValues = Object.values(this.respuestas).flatMap((value) => {
         if (typeof value === "object") {
@@ -1225,16 +1262,38 @@ export default {
     async guardarRegistro() {
       const firebaseApp = initializeApp(firebaseConfig);
       const db = getFirestore(firebaseApp);
+      const colección = collection(db, "registros");
 
-       const colección = collection(db, "registros");
-       const nuevoDocumento = await addDoc(colección, {
-        name: `${this.respuestas.nombre} ${this.respuestas.primerApellido}`,
-        email: this.respuestas.correoElectronico,
-        celular: this.respuestas.celular,
-      });
+      try {
+        // Obtener IP pública del usuario
+        const ipResponse = await fetch("https://api.ipify.org?format=json");
+        const ipData = await ipResponse.json();
+        const ip = ipData.ip;
 
-       console.log(nuevoDocumento);
-     },
+        // Obtener User Agent
+        const userAgent = navigator.userAgent;
+        
+        const fbp = getCookie("_fbp") || null;
+        const fbc = getFbcFromUrl() || getCookie("_fbc") || null;
+
+        // Crear el documento con todos los datos necesarios
+        const nuevoDocumento = await addDoc(colección, {
+          name: this.respuestas.nombre,
+          lastName: this.respuestas.primerApellido,
+          email: this.respuestas.correoElectronico,
+          phone: this.respuestas.celular,
+          ip: ip,
+          user_agent: userAgent,
+          fbp: fbp,
+          fbc: fbc,
+          timestamp: new Date(), // opcional: para tener un registro de la fecha/hora
+        });
+
+        console.log("Documento creado:", nuevoDocumento.id);
+      } catch (error) {
+        console.error("Error al guardar el registro:", error);
+      }
+    },
     async guardarPDFFirestore(pdfBytes) {
       try {
         const app = initializeApp(firebaseConfig);
@@ -1255,24 +1314,24 @@ export default {
       }
     },
     async submitForm() {
-      this.loading = true; 
+      this.loading = true;
       this.submit = true;
       try {
         // Rellenar el PDF con las respuestas
         this.pdfBytes = await this.rellenarPDF();
         await this.guardarPDFFirestore(this.pdfBytes);
-         this.submitComplete = true;
+        this.submitComplete = true;
       } catch (error) {
         console.error("Error al rellenar el PDF:", error);
       } finally {
-        this.loading = false;  // Ocultar la ruleta de carga
+        this.loading = false; // Ocultar la ruleta de carga
       }
     },
-    contactarAsesor(){
-       window.location.href="https://wa.link/hxop5c"
-    }
-  }
-}
+    contactarAsesor() {
+      window.location.href = "https://wa.link/hxop5c";
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -1320,8 +1379,12 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 form {
@@ -1436,35 +1499,35 @@ select {
 }
 
 .widthBoton {
-    width:127.81px;
+  width: 127.81px;
 }
 
-.boton-enviar{
+.boton-enviar {
   display: grid;
   justify-content: center;
   margin: 15px 0;
 }
 
-.submit{
-    all: unset;
-    font-family: Helvetica, Arial, sans-serif;
-    display: inline-block;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background-color: #f08935;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 5px;
-    padding: 0 30px;
-    font-weight: bold;
-    height: 45px;
-    cursor: pointer;
-    line-height: 45px;
-    text-align: center;
-   /*margin: 15px 0;*/
-    text-decoration: none;
+.submit {
+  all: unset;
+  font-family: Helvetica, Arial, sans-serif;
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #f08935;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 0 30px;
+  font-weight: bold;
+  height: 45px;
+  cursor: pointer;
+  line-height: 45px;
+  text-align: center;
+  /*margin: 15px 0;*/
+  text-decoration: none;
 }
 
 .submit:hover {
@@ -1473,28 +1536,28 @@ select {
 
 .submit-desabilitado {
   all: unset;
-    font-family: Helvetica, Arial, sans-serif;
-    display: inline-block;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background-color: #6c757d;
-    border-color: #6c757d;
-   border: none;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 5px;
-    padding: 0 30px;
-    font-weight: bold;
-    height: 45px;
-    cursor: pointer;
-    line-height: 45px;
-    text-align: center;
-   /*margin: 15px 0;*/
-    text-decoration: none;
-     outline: none;
-    opacity: 0.65;
+  font-family: Helvetica, Arial, sans-serif;
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 0 30px;
+  font-weight: bold;
+  height: 45px;
+  cursor: pointer;
+  line-height: 45px;
+  text-align: center;
+  /*margin: 15px 0;*/
+  text-decoration: none;
+  outline: none;
+  opacity: 0.65;
 }
 
 .boton-desabilitado {
@@ -1541,7 +1604,6 @@ select {
 
 .section-form__referencias {
   display: grid;
-
 }
 
 .section-form__referencia {
@@ -1550,22 +1612,21 @@ select {
 }
 
 .section-form__referencia div {
-   margin-right: 12px;
-   width: 100%;
+  margin-right: 12px;
+  width: 100%;
 }
 
-.contactar{
-   margin-top: 2.5rem;
-   font-size: 18px;
+.contactar {
+  margin-top: 2.5rem;
+  font-size: 18px;
   color: #000000;
-  font-family: 'Open Sans';
-
+  font-family: "Open Sans";
 }
 
 @media (min-width: 22.5rem) {
   .section-form__referencia div {
-   width: 45%;
-}
+    width: 45%;
+  }
 }
 
 @media (min-width: 31.25rem) {
@@ -1585,8 +1646,8 @@ select {
   }
 
   .section-form__referencia div {
-   width: 30%;
-}
+    width: 30%;
+  }
 }
 
 @media (min-width: 49.1rem) {
