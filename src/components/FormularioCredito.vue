@@ -1286,6 +1286,7 @@ export default {
           user_agent: userAgent,
           fbp: fbp,
           fbc: fbc,
+          status:"pendiente",
           timestamp: new Date(), // opcional: para tener un registro de la fecha/hora
         });
 
